@@ -1,0 +1,33 @@
+-navbar= [{name: "Inicio", url:""}, {name: "¿Quienes somos?", url:""}, {name: "Proyectos", url:""}, {name: "Contacto", url:""}]
+
+<!DOCTYPE html>
+%html{:lang => "es"}
+%head
+	%meta{name:"description", content:"StronglyTyped, Typing the future"}
+	%meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+	%meta{:charset => "UTF-8"}/
+	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Open+Sans:400,600"}
+	%link{:rel => "stylesheet", :href => "https://fonts.googleapis.com/css?family=Roboto:400,500,700"}
+	%link{:rel => "stylesheet", :href => "style/normalize.css"}/
+	%link{:rel => "stylesheet", :href => "style/bootstrap.css"}/
+	%link{:rel => "stylesheet", :href => "https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}
+	%link{:rel => "stylesheet", :href => "style/css.css"}/
+	%title Strongly Typed
+%body
+	.video-container
+		/Width and height attrs are ok on media and images
+		%video{autoplay:true, width:"1280", height:"720",poster:"/videos/images/Love-Coding.jpg",loop:true}
+			%source{type:"video/mp4",src:"/videos/mp4/Love-Coding.mp4"}
+			%source{type:"video/webm",src:"/videos/webm/Love-Coding.webm"}
+	/Barra de navegación
+	.row.middle-xs.full-height.center-xs.up.relative.remove-margin
+		%nav.fixed.right.top.up.main-nav#navigation
+			%ul.list-inline
+				-navbar.each do |item|
+					%li
+						%a.medium=item[:name]
+		.col-xs-12.remove-padding
+			.box.logo
+				%img{src:"/images/ST.png", alt:"Logo Strongly Typed", width:200, height:200}
+				%h1.white.title.roboto-bold.remove-margin Strongly Typed
+				%p.open-sans.white.medium Tecleando el futuro de otra forma
